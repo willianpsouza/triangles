@@ -5,14 +5,16 @@ def isPrime(n):
 
 def main():
     primes = []
-    for c in range(2, 3000):       
+    founded = []
+    for c in range(1, 333):
         if isPrime(c):
             primes.append(c)
 
     for c in primes:
         for d in primes:
             if c == d: continue
-            g = math.sqrt(pow(c,2)+pow(d,2))
-            if isPrime(g):
+            g = int(pow(c,2)+pow(d,2))
+            if isPrime(g) and g not in founded:
                 print(c,d,g)
+                founded.append(g)
 main()
